@@ -1,0 +1,243 @@
+*************************************************************
+FileName = 4can_revA.GBR
+AutoAperture = True
+*************************************************************
+Generating : Top Layer
+      File : 4can_revA.GTL
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+*************************************************************
+
+*************************************************************
+Generating : Bottom Layer
+      File : 4can_revA.GBL
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D18
+    D19
+    D21
+    D22
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : 4can_revA.GPT
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : 4can_revA.GTO
+
+    Adding Layer      : Top Overlay
+
+
+Used DCodes :
+    D19
+    D21
+    D35
+    D36
+    D37
+    D38
+    D39
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : 4can_revA.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : 4can_revA.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Top Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D16
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : 4can_revA.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D41
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : 4can_revA.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Layer
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D11
+    D32
+    D33
+    D34
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : 4can_revA.GBO
+
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D19
+    D35
+    D37
+    D58
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 13
+      File : 4can_revA.GM13
+
+    Adding Layer      : Mechanical 13
+
+
+Used DCodes :
+    D59
+    D60
+    D61
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 15
+      File : 4can_revA.GM15
+
+    Adding Layer      : Mechanical 15
+
+
+Used DCodes :
+    D19
+    D59
+*************************************************************
+

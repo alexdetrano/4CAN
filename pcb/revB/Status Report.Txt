@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [Free Documents]
+   Generated File[4can_revA.TXT]
+   Generated File[4can_revA.LDP]
+   Generated File[4can_revA.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 9:29:44 AM On 11/1/2018
