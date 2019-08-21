@@ -27,6 +27,8 @@ sudo cp config.txt /boot/config.txt
 ```
 
 # usage
+Before using 4can, make sure that the socketcan kernel module is loaded with `sudo modprobe can_dev`. This shouldn't be necessary since the pi will load the correct kernel module based on the device tree, but it doesn't hurt to check.
+
 Once installed, run the 4can.sh to bring up CAN interfaces
 `./4can.sh`
 
