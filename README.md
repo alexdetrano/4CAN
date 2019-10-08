@@ -6,6 +6,8 @@ Tested on the following raspbian images using a pi3b+
 * [Oct 2018 (kernel 4.14.71-v7+)](http://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2018-10-11/) 
 * [Jun 2018 (kernel 4.14.50-v7+)](http://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2018-06-29/)
 
+4can also works with the Raspberry pi 4
+* [Sep 2019 (kernel 4.19.75-v7+](http://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2019-09-30/)
 4can should also work with a pi0w, but it's recommended to use at least a pi3b. Also recommend using a heatsink on the pi, because the pi can get a little toasty running 4 can interfaces.
 
 # install
