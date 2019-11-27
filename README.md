@@ -1,5 +1,11 @@
 <img width="500" alt="4canv2 picture" src="images/4canv2.jpg">
 
+# what is this thing?
+The 4CAN is a Raspberry Pi HAT which provides 4 CAN interfaces. The 4CAN is 100% compattible with socketcan and can-utils, and is very easy to get up and running.  A microUSB-UART serial adaptor is included to make troubleshooting the pi easier, and there are 4 LEDs on board, 2 of which are bidirectional green/red. And the best news of all is the 4CAN is open source, so you can build your own!
+
+# why?
+There aren't many _cheap_ devices which offer 4 CAN interfaces, compatible with socketcan, and is small, compact, and fits nicely with a Raspberry Pi.  Having 4 CAN busses allows testing 4 CAN buses simultaneously, as well as doing CAN-in-the-middle with 2 buses simultaneously. 
+
 # hardware
 Tested on the following raspbian images using a pi3b+
 * [Apr 2019 (kernel 4.14.98-v7+)](http://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2019-04-09/)
