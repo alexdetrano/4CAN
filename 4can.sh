@@ -1,4 +1,9 @@
 #!/bin/sh
+if [[ $EUID -ne 0 ]]; then
+   echo "This script must be run as root"
+   exit 1
+fi
+
 ip link set can0 down
 ip link set can1 down
 ip link set can2 down
