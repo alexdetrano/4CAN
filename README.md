@@ -29,10 +29,26 @@ sudo cp /boot/overlays/mcp2515* /boot/overlays/bak
 sudo cp ./dtbo/*.dtbo /boot/overlays
 ```
 
-2) copy config.txt to /boot/config.txt (make a backup of original /boot/config.txt just incase)
+2) append 4can setup to /boot/config.txt (makes a backup of original /boot/config.txt just in case)
 ```
 sudo cp /boot/config.txt /boot/config.txt.bak
-sudo cp config.txt /boot/config.txt
+cat << EOF >> /boot/config.txt
+# 4CAN setup
+# the order of the interfaces matter
+# ie can3,can2,can1,can0 must be preserved
+# otherwise can0 will not REALLY be can0
+dtparam=spi=on
+dtoverlay=spi1-2cs
+
+dtoverlay=mcp2515-can3,oscillator=16000000,interrupt=24
+dtoverlay=mcp2515-can2,oscillator=16000000,interrupt=23
+dtoverlay=mcp2515-can1,oscillator=16000000,interrupt=25
+dtoverlay=mcp2515-can0,oscillator=16000000,interrupt=22
+
+
+# enable uart
+enable_uart=1
+EOF
 ```
 
 # usage
