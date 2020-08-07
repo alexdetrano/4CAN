@@ -17,6 +17,10 @@ can2hs = {'can0': 0,
           'can3': 3
 }
 
+def autoint(x):
+    """Stupid helper function so we can pass in hex values and not have to convert from string"""
+    return int(x,0)
+
 # eq=True allows us to make comparisons of instances
 # frozen=True creates a __hash__ so we can add it to hashed collections
 @dataclass(eq=True, frozen=True)
@@ -86,6 +90,7 @@ class Bus2Bus:
         """
         bus_prefix = (can2hs[self.src_ch] << 4) | can2hs[self.dst_ch]
         bus_prefix = bus_prefix.to_bytes(1, byteorder='big')
+        print(f'Sending messages from {self.src_ch} to {self.dst_ch}', file=sys.stderr)
         for id in range(self.start_id, self.end_id+1):
             # include the sending ID as part of the payload
             # so we know original sent ID
@@ -126,17 +131,17 @@ def parse_args(args):
     parser = argparse.ArgumentParser(description='Test interbus CAN bus connectivity')
     parser.add_argument('src', metavar='src_interface', help='interface to send CAN messages from')
     parser.add_argument('dst', metavar='dst_interface', help='interface to receive CAN messages on')
-    parser.add_argument('--start_id', default=0x0,  help='CAN ID to start testing with eg 0x600')
-    parser.add_argument('--end_id', default=0x7ff, help='CAN ID to start testing with eg 0x7ff')
+    parser.add_argument('--start_id', default=0x0,  type=autoint, help='CAN ID to start testing with eg 0x600')
+    parser.add_argument('--end_id', default=0x7ff, type=autoint, help='CAN ID to start testing with eg 0x7ff')
     parser.add_argument('--msg_repeat', default=5, type=int, help='Number of times to repeat sending a message')
-    parser.add_argument('--delay', default=0.1, type=int, help='Time to wait between sending messages')
+    parser.add_argument('--delay', default=0.1, type=float, help='Time to wait between sending messages')
     #parser.add_argument('--permute', nargs='+', metavar='interface', help='send/receive on all possible interface permutations')
 
     return parser.parse_args(args)
 
 def main():
     args = parse_args(sys.argv[1:])
-    bus2bus = Bus2Bus(args.src, args.dst, int(args.start_id,16), int(args.end_id,16), args.msg_repeat, args.delay)
+    bus2bus = Bus2Bus(args.src, args.dst, args.start_id, args.end_id, args.msg_repeat, args.delay)
     bus2bus.send_msgs()
     bus2bus.process_msgs()
     bus2bus.print_msgs()
