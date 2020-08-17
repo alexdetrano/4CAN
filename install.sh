@@ -19,7 +19,11 @@ sudo cp /boot/config.txt /boot/config.txt.bak
 echo "modifying /boot/config.txt"
 sudo cp config.txt /boot/config.txt
 
-#3) reboot
+#3) copy udev rules
+sudo mkdir -p /etc/udev/rules.d
+sudo cp 75-can.rules /etc/udev/rules.d/75-can.rules
+
+#4) reboot
 echo "done"
 echo "reboot and run 4can.sh to bring up the interfaces"
 
