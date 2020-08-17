@@ -1,0 +1,10 @@
+# https://raspberrypi.stackexchange.com/questions/76370/link-spidev-and-can-device
+SUBSYSTEM!="net", GOTO="my_can_end"
+ACTION!="add", GOTO="my_can_end"
+
+DEVPATH=="/devices/platform/soc/fe204000.spi/spi_master/spi0/spi0.0/net/can?", ATTR{id}="SPI0p0", ENV{SPI}="0p1", NAME="can0"
+DEVPATH=="/devices/platform/soc/fe204000.spi/spi_master/spi0/spi0.1/net/can?", ATTR{id}="SPI0p1", ENV{SPI}="0p1", NAME="can1"
+DEVPATH=="/devices/platform/soc/fe215080.spi/spi_master/spi1/spi1.0/net/can?", ATTR{id}="SPI1p0", ENV{SPI}="1p0", NAME="can2"
+DEVPATH=="/devices/platform/soc/fe215080.spi/spi_master/spi1/spi1.1/net/can?", ATTR{id}="SPI1p1", ENV{SPI}="1p1", NAME="can3"
+
+LABEL="my_can_end"
