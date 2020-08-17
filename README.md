@@ -1,5 +1,11 @@
 <img width="500" alt="4canv2 picture" src="images/4canv2.jpg">
 
+# what is this thing?
+The 4CAN is a Raspberry Pi HAT which provides 4 CAN interfaces. The 4CAN is 100% compattible with socketcan and can-utils, and is very easy to get up and running.  A microUSB-UART serial adaptor is included to make troubleshooting the pi easier, and there are 4 LEDs on board, 2 of which are bidirectional green/red. And the best news of all is the 4CAN is open source, so you can build your own!
+
+# why?
+There aren't many _cheap_ devices which offer 4 CAN interfaces, compatible with socketcan, and is small, compact, and fits nicely with a Raspberry Pi.  Having 4 CAN busses allows testing 4 CAN buses simultaneously, as well as doing CAN-in-the-middle with 2 buses simultaneously. 
+
 # hardware
 Tested on the following raspbian images using a pi3b+
 * [Apr 2019 (kernel 4.14.98-v7+)](http://downloads.raspberrypi.org/raspbian_lite/images/raspbian_lite-2019-04-09/)
@@ -23,10 +29,26 @@ sudo cp /boot/overlays/mcp2515* /boot/overlays/bak
 sudo cp ./dtbo/*.dtbo /boot/overlays
 ```
 
-2) copy config.txt to /boot/config.txt (make a backup of original /boot/config.txt just incase)
+2) append 4can setup to /boot/config.txt (makes a backup of original /boot/config.txt just in case)
 ```
 sudo cp /boot/config.txt /boot/config.txt.bak
-sudo cp config.txt /boot/config.txt
+cat << EOF >> /boot/config.txt
+# 4CAN setup
+# the order of the interfaces matter
+# ie can3,can2,can1,can0 must be preserved
+# otherwise can0 will not REALLY be can0
+dtparam=spi=on
+dtoverlay=spi1-2cs
+
+dtoverlay=mcp2515-can3,oscillator=16000000,interrupt=24
+dtoverlay=mcp2515-can2,oscillator=16000000,interrupt=23
+dtoverlay=mcp2515-can1,oscillator=16000000,interrupt=25
+dtoverlay=mcp2515-can0,oscillator=16000000,interrupt=22
+
+
+# enable uart
+enable_uart=1
+EOF
 ```
 
 # usage
